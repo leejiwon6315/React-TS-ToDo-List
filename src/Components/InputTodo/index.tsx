@@ -1,23 +1,27 @@
-import { useRef } from "react";
+import { useState } from "react";
 import style from "./InputTodo.module.scss";
 
 const InputTodo: React.FC = () => {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [input, setInput] = useState("");
 
-  const addTodoData = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const onChangeInput = (e: any) => {
+    setInput(e.target.value);
+  };
+
+  const addTodoData = (e: React.FormEvent) => {
     e.preventDefault();
+    setInput("");
   };
 
   return (
-    <form className={style.todo_input_wrapper}>
-      <input className={style.todo_input} type="text" ref={inputRef} />
-      <button
-        className={style.todo_input_button}
-        type="submit"
-        onClick={addTodoData}
-      >
-        추가
-      </button>
+    <form className={style.todo_input_wrapper} onSubmit={addTodoData}>
+      <input
+        className={style.todo_input}
+        type="text"
+        value={input}
+        onChange={onChangeInput}
+      />
+      <button className={style.todo_input_button}>추가</button>
     </form>
   );
 };
