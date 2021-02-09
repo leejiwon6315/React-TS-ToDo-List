@@ -10,7 +10,7 @@
     padding: 0 10px 0 10px;
     margin-top: 5px;
     border: 1px solid rgba(126, 126, 126, 0.397);
-    border-radius: 5px;
+    border-radius: 2px;
 
     &:focus {
       outline: none;
@@ -25,14 +25,15 @@
     height: 42px;
     margin: 5px 0 0 5px;
     border: none;
-    border-radius: 5px;
+    border-radius: 2px;
     color: white;
-    background-color: rgb(103, 179, 167);
+    background-color: rgb(87, 163, 152);
     cursor: pointer;
 
     &:hover {
       transform: translate(0, -1px);
       box-shadow: 0 2px 1px rgba(126, 126, 126, 0.13);
+      background-color: rgb(104, 189, 176);
     }
 
     &:active {
