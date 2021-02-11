@@ -19,7 +19,8 @@ const TodoDispatchContext = createContext<TodoDispatch | undefined>(undefined);
 const todoReducer = (state: TodoState, action: Action) => {
   switch (action.type) {
     case "CREATE":
-      return [...state, { id: state.length, schedule: action.schedule }];
+      const nextId = Math.max(-1, ...state.map((elem) => elem.id)) + 1;
+      return [...state, { id: nextId, schedule: action.schedule }];
     case "REMOVE":
       return state.filter((elem) => elem.id !== action.id);
     default:
