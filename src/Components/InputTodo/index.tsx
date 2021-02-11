@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useTodoDispatch } from "../../TodosContext";
 import style from "./InputTodo.module.scss";
 
 const InputTodo: React.FC = () => {
   const [input, setInput] = useState("");
+  const dispatch = useTodoDispatch();
 
   const onChangeInput = (e: any) => {
     setInput(e.target.value);
@@ -10,6 +12,10 @@ const InputTodo: React.FC = () => {
 
   const addTodoData = (e: React.FormEvent) => {
     e.preventDefault();
+    dispatch({
+      type: "CREATE",
+      schedule: input,
+    });
     setInput("");
   };
 
