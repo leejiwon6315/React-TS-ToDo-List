@@ -3,7 +3,7 @@ import { useTodoDispatch } from "../../TodosContext";
 import style from "./InputTodo.module.scss";
 
 const InputTodo: React.FC = () => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState<string>("");
   const dispatch = useTodoDispatch();
 
   const onChangeInput = (e: any) => {
