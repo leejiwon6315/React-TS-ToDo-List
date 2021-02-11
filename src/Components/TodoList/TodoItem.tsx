@@ -1,17 +1,28 @@
+import { useTodoDispatch, Todo } from "../../TodosContext";
 import style from "./TodoList.module.scss";
 
 interface TodoItemProps {
-  todo: {
-    id: number;
-    schedule: string;
-  };
+  todo: Todo;
 }
 
 const TodoItem = ({ todo }: TodoItemProps) => {
+  const dispatch = useTodoDispatch();
+
+  const removeItem = () => {
+    dispatch({
+      type: "REMOVE",
+      id: todo.id,
+    });
+  };
+
   return (
     <li className={style.list}>
-      <p className={style.todo}>{todo.schedule}</p>
-      <p className={style.delete_todo}>×</p>
+      <p className={style.todo}>
+        {todo.id + 1}. {todo.schedule}
+      </p>
+      <p className={style.delete_todo} onClick={removeItem}>
+        ×
+      </p>
     </li>
   );
 };

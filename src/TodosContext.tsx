@@ -32,10 +32,7 @@ export const TodoContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [todos, dispatch] = useReducer(todoReducer, [
-    { id: 1, schedule: "공부하기" },
-    { id: 2, schedule: "밥먹기" },
-  ]);
+  const [todos, dispatch] = useReducer(todoReducer, []);
 
   return (
     <TodoDispatchContext.Provider value={dispatch}>
