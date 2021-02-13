@@ -1,9 +1,9 @@
 import { Dispatch, createContext, useReducer, useContext } from "react";
 
-export interface Todo {
+export type Todo = {
   id: number;
   schedule: string;
-}
+};
 type TodoState = Array<Todo>;
 
 const TodoStateContext = createContext<TodoState | undefined>(undefined);
