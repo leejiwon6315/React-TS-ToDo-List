@@ -12,10 +12,17 @@
     flex-direction: row;
     align-items: center;
 
-    .todo {
-      font-size: 16px;
+    .todo_false,
+    .todo_true {
+      font-size: 17px;
       height: fit-content;
       padding: 0 10px 0 8px;
+      cursor: pointer;
+    }
+
+    .todo_true {
+      color: rgba(126, 126, 126, 0.603);
+      text-decoration: line-through;
     }
 
     .delete_todo {

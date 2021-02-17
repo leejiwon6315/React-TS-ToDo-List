@@ -22,8 +22,12 @@ const TodoItem: React.FC<Props> = ({ todo }) => {
 
   return (
     <li className={style.list}>
-      <input type="checkbox" onClick={onToggle} />
-      <p className={style.todo}>{todo.schedule}</p>
+      <p
+        className={todo.checked ? style.todo_true : style.todo_false}
+        onClick={onToggle}
+      >
+        {todo.schedule}
+      </p>
       <p className={style.delete_todo} onClick={onRemoveItem}>
         ×
       </p>

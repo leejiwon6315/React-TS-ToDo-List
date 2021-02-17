@@ -1,3 +1,4 @@
+import React from "react";
 import style from "./TodoList.module.scss";
 import TodoItem from "./TodoItem";
 import { useTodoState } from "../../TodosContext";
@@ -13,4 +14,4 @@ const TodoList: React.FC = () => {
   );
 };
 
-export default TodoList;
+export default React.memo(TodoList);
