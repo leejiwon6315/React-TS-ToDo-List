@@ -1,7 +1,7 @@
 import style from "./TodoHeader.module.scss";
 import { useTodoState } from "../../TodosContext";
 
-const TodoHeader = () => {
+const TodoHeader: React.FC = () => {
   const todo = useTodoState();
   return (
     <div className={style.todo_header_wrapper}>
